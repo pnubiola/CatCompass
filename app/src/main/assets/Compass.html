@@ -6,11 +6,45 @@
 		<style>
 			@import url('https://fonts.googleapis.com/css?family=Charmonman|Courgette|Pacifico&display=swap');
 			.catNubiolaCompasDialog{
-				width: 370px;
+				/*width: 370px;*/
 				background-color: #D6B37A;
 			}
 			.catNubiolaCompasDialog .barraCtrlCompass{
-				margin-bottom: 20px; 
+				position: absolute;
+				top: 0%; left: 0%;
+				margin-bottom: 20px;
+			}
+			.catNubiolaCompasDialog .divCompassSvg{
+				position: absolute;
+				bottom: 0%; right: 0%;
+			}
+			.catNubiolaCompasDialog .Textdegrees{
+				position: absolute;
+				top: 0%; left: 0%;
+			}
+			.catNubiolaCompasDialog .CompassDegrees{
+				position: relative;
+				top: 0%; left: 0%;
+			}
+			.catNubiolaCompasDialog .roundedButton {
+				width: 60px;
+				background-color: #BCC2B2;
+				border-radius: 20px 20px 20px 20px;
+				border-style: solid;
+				border-width: 2px;
+				border-color: green;
+			}
+			.catNubiolaCompasDialog .CompassOk{
+				margin-right:5px;
+				margin-bottom: 0px
+				border-color: green;
+				position: relative;
+				bottom: 0%; right: 0%;
+			}
+			.catNubiolaCompasDialog .CompassCancel{
+				border-color: red;
+				position: absolute;
+				bottom: 0%; right: 0%;
 			}
 			.catNubiolaCompasDialog div svg{
 				display: block;
@@ -63,24 +97,6 @@
 				fill: yellow;
 				stroke: none;
 			}
-			.catNubiolaCompasDialog .roundedButton {
-				width: 60px;
-				background-color: #BCC2B2;
-				border-radius: 20px 20px 20px 20px;
-				border-style: solid;
-				border-width: 2px;
-				border-color: green;
-			}
-			.catNubiolaCompasDialog .CompassOk{
-				margin-right:5px;
-				float: right;
-				border-color: green;
-			}
-			.catNubiolaCompasDialog .CompassCancel{
-				margin-right:5px;
-				float: right;
-				border-color: red;
-			}
 		</style>
 		<script>
 			class Compass{
@@ -96,7 +112,8 @@
 					if (window.DeviceOrientationEvent){
 						this.imageTransx = "0";
 						this.imageTransy = "0";
-						this.isAppleWebKit = navigator.userAgent.includes("AppleWebKit")
+						this.isAppleWebKit = navigator.userAgent.includes("AppleWebKit");
+						this.isChrome = navigator.userAgent.includes("Chrome");
 						if (window.DeviceOrientationEvent.requestPermission){
 							this.promise = window.DeviceOrientationEvent.requestPermission();
 							window.alert(this.promise);
@@ -118,9 +135,16 @@
 								this.checkOrientation(orientationScreen);
 							},false);
 							this.degrees = 0;
-							window.addEventListener('deviceorientation', (e)=>{
+							if (window.DeviceOrientationAbsoluteEvent) {
+								alert('Absolute orientation')
+								window.addEventListener('DeviceOrientationAbsolute', (e)=>{
 								this.rotateRosa(e);
-							}, true );
+								}, true );
+							}else{
+								window.addEventListener('deviceorientation', (e)=>{
+								this.rotateRosa(e);
+								}, true );
+							}
 						}catch(error){
 							window.alert("Inicia: " + error);
 						}
@@ -130,14 +154,18 @@
 				}
 				rotateRosa(e){
 					var degrees;
-					var degrees1 = ""
 					try{
 						var icompas = this.dialog.getElementsByClassName("ImatgeCompas")[0];
 						if(event.webkitCompassHeading) {
 							// Apple works only with this, alpha doesn't work
-							degrees1 = Math.round(e.webkitCompassHeading  * 10)/10;
+							degrees = e.webkitCompassHeading
+						}else{
+							degrees = e.alpha;
+							/*if (this.isChrome){
+							    /degrees = (degrees) % 360
+							}*/
 						}
-							degrees = Math.round(e.alpha * 10)/10;
+						degrees = Math.round(degrees * 10)/10;
 					}catch(error){
 						window.alert("Devuice orientation: " + error);
 					}
@@ -146,10 +174,64 @@
 					") rotate(" +  degrees + " 175 175)");
 					degrees = degrees<10?"":(degrees < 100?"0":"") + degrees;
 					var deg = this.dialog.getElementsByClassName("CompassDegrees")[0];
-					deg.innerHTML = degrees + " " + degrees1;
+					deg.innerHTML = degrees;
 				}
 				checkOrientation(orientation){
 					var error = "Undefined";
+					try{
+						var divBctrl = this.dialog.getElementsByClassName("barraCtrlCompass")[0];
+					}catch(err){
+						divBctrl = null ; error = err;
+					}
+					if (divBctrl == null){
+						window.alert("No barraCtrlCompass: " + error);
+						return false;
+					}
+					try{
+						var divSvg = this.dialog.getElementsByClassName("divCompassSvg")[0];
+					}catch(err){
+						divSvg = null ; error = err;
+					}
+					if (divSvg == null){
+						window.alert("No divCompassSvg: " + error);
+						return false;
+					}
+					try{
+						var textd = this.dialog.getElementsByClassName("Textdegrees")[0];
+					}catch(err){
+						textd = null ; error = err;
+					}
+					if (textd == null){
+						window.alert("No Textdegrees: " + error);
+						return false;
+					}
+					try{
+						var cdeg = this.dialog.getElementsByClassName("CompassDegrees")[0];
+					}catch(err){
+						cdeg = null ; error = err;
+					}
+					if (cdeg == null){
+						window.alert("No Textdegrees: " + error);
+						return false;
+					}
+					try{
+						var bok = this.dialog.getElementsByClassName("CompassOk")[0];
+					}catch(err){
+						bok = null ; error = err;
+					}
+					if (bok == null){
+						window.alert("No CompassOk: " + error);
+						return false;
+					}
+					try{
+						var bcan = this.dialog.getElementsByClassName("CompassCancel")[0];
+					}catch(err){
+						bcan = null ; error = err;
+					}
+					if (bcan == null){
+						window.alert("No CompassCancel: " + error);
+						return false;
+					}
 					try{
 						var svg = this.dialog.getElementsByClassName("CompassSvg")[0];
 					}catch(err){
@@ -189,6 +271,34 @@
 					switch (orientation){
 						case "landscape-primary":
 							try{
+								divBctrl.style.left="0%";
+								divBctrl.style.top="0%";
+								divBctrl.style.bottom="0%";
+								divBctrl.style.right="auto";
+								divSvg.style.left="auto";
+								divSvg.style.top="0%";
+								divSvg.style.bottom="0%";
+								divSvg.style.right="0%";
+								textd.style.left="auto";
+								textd.style.top="0%";
+								textd.style.bottom="auto";
+								textd.style.right="auto";
+								textd.style.writing-mode: vertical-rl;
+								textd.style.text-orientation: upright;
+								cdeg.style.left="auto";
+								cdeg.style.top="0%";
+								cdeg.style.bottom="auto";
+								cdeg.style.right="auto";
+								bok.style.left="auto";
+								bok.style.top="0%";
+								bok.style.bottom="auto";
+								bok.style.right="auto";
+								bok.style.margin-right = "0px";
+								bok.style.margin-bottom = "5px";
+								bcan.style.left="auto";
+								bcan.style.top="0%";
+								bcan.style.bottom="auto";
+								bcan.style.right="auto";
 								svg.setAttribute("width","378");
 								svg.setAttribute("height","350");
 								svg.setAttribute("viewBox","0 0 378 350");
@@ -204,6 +314,34 @@
 							break;
 						case "landscape-secondary":
 							try{
+								divBctrl.style.left="auto";
+								divBctrl.style.top="0%";
+								divBctrl.style.bottom="0%";
+								divBctrl.style.right="0%";
+								divSvg.style.left="0";
+								divSvg.style.top="0%";
+								divSvg.style.bottom="0%";
+								divSvg.style.right="auto";
+								textd.style.left="auto";
+								textd.style.top="0%";
+								textd.style.bottom="auto";
+								textd.style.right="auto";
+								textd.style.writing-mode: vertical-rl;
+								textd.style.text-orientation: upright;
+								cdeg.style.left="auto";
+								cdeg.style.top="0%";
+								cdeg.style.bottom="auto";
+								cdeg.style.right="auto";
+								bok.style.left="auto";
+								bok.style.top="0%";
+								bok.style.bottom="auto";
+								bok.style.right="auto";
+								bok.style.margin-right = "0px";
+								bok.style.margin-bottom = "5px";
+								bcan.style.left="auto";
+								bcan.style.top="0%";
+								bcan.style.bottom="auto";
+								bcan.style.right="auto";
 								svg.setAttribute("width","378");
 								svg.setAttribute("height","350");
 								svg.setAttribute("viewBox","0 0 378 350");
@@ -219,6 +357,34 @@
 							break;
 						case "portrait-primary":
 							try{
+								divBctrl.style.left="0%";
+								divBctrl.style.top="0%";
+								divBctrl.style.bottom="auto";
+								divBctrl.style.right="0%";
+								divSvg.style.left="0%";
+								divSvg.style.top="auto";
+								divSvg.style.bottom="0%";
+								divSvg.style.right="0%";
+								textd.style.left="auto";
+								textd.style.top="0%";
+								textd.style.bottom="auto";
+								textd.style.right="auto";
+								textd.style.writing-mode: vertical-rl;
+								textd.style.text-orientation: upright;
+								cdeg.style.left="0%";
+								cdeg.style.top="auto";
+								cdeg.style.bottom="auto";
+								cdeg.style.right="auto";
+								bok.style.left = "auto";
+								bok.style.top = "auto";
+								bok.style.bottom="auto";
+								bok.style.right="0%";
+								bok.style.margin-right = "5px";
+								bok.style.margin-bottom = "0px";
+								bcan.style.left="auto";
+								bcan.style.top="auto";
+								bcan.style.bottom="auto";
+								bcan.style.right="0%";
 								svg.setAttribute("width","350");
 								svg.setAttribute("height","378");
 								svg.setAttribute("viewBox","0 0 350 378");
@@ -234,6 +400,14 @@
 							break;
 						case "portrait-secondary":
 							try{
+								divBctrl.style.left="0%";
+								divBctrl.style.top="auto";
+								divBctrl.style.bottom="0%";
+								divBctrl.style.right="0%";
+								divSvg.style.left="0%";
+								divSvg.style.top="0%";
+								divSvg.style.bottom="auto";
+								divSvg.style.right="0%";
 								svg.setAttribute("width","350");
 								svg.setAttribute("height","378");
 								svg.setAttribute("viewBox","0 0 350 378");
@@ -266,8 +440,7 @@
 			<p id="demo"></p>
 
 			<script>
-				document.getElementById("demo").innerHTML =
-
+				document.getElementById("demo").innerHTML = navigator.userAgent;
 			</script>
 			<button onclick="new Compass('Compass')">Compass</button>
 		</div>
@@ -277,7 +450,7 @@
 				<button class="CompassOk roundedButton">ok</button>
 				<button class="CompassCancel roundedButton">Cancel</button>
 			</div>
-			<div>
+			<div class="divCompassSvg">
 				<svg class="CompassSvg" x="0" y="0" width="350" height="378" viewBox="0 0 350 378">
 					<defs>
 						<linearGradient id="linearGradient1" x1="0" y1="0" x2="0" y2="1">
