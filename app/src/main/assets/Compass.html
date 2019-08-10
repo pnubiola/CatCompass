@@ -6,25 +6,26 @@
 		<style>
 			@import url('https://fonts.googleapis.com/css?family=Charmonman|Courgette|Pacifico&display=swap');
 			.catNubiolaCompasDialog{
-				/*width: 370px;*/
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				width: 370px;
 				background-color: #D6B37A;
 			}
 			.catNubiolaCompasDialog .barraCtrlCompass{
-				position: absolute;
-				top: 0%; left: 0%;
 				margin-bottom: 20px;
+				background-color: aqua;
 			}
 			.catNubiolaCompasDialog .divCompassSvg{
-				position: absolute;
-				bottom: 0%; right: 0%;
+				bottom: 0; right: 0;
 			}
 			.catNubiolaCompasDialog .Textdegrees{
 				position: absolute;
-				top: 0%; left: 0%;
+				top: 0; left: 0;
 			}
 			.catNubiolaCompasDialog .CompassDegrees{
 				position: relative;
-				top: 0%; left: 0%;
+				top: 0; left: 0;
 			}
 			.catNubiolaCompasDialog .roundedButton {
 				width: 60px;
@@ -37,12 +38,12 @@
 			.catNubiolaCompasDialog .CompassOk{
 				border-color: green;
 				position: relative;
-				bottom: 0%; right: 0%;
+				bottom: 0; right: 0;
 			}
 			.catNubiolaCompasDialog .CompassCancel{
 				border-color: red;
 				position: absolute;
-				bottom: 0%; right: 0%;
+				bottom: 0; right: 0;
 			}
 			.catNubiolaCompasDialog div svg{
 				display: block;
@@ -269,32 +270,25 @@
 					switch (orientation){
 						case "landscape-primary":
 							try{
-								divBctrl.style.left="0%";
-								divBctrl.style.top="0%";
-								divBctrl.style.bottom="0%";
-								divBctrl.style.right="auto";
-								divSvg.style.left="auto";
-								divSvg.style.top="0%";
-								divSvg.style.bottom="0%";
-								divSvg.style.right="0%";
-								textd.style.left="auto";
-								textd.style.top="0%";
-								textd.style.bottom="auto";
-								textd.style.right="auto";
-								textd.style.writing-mode: vertical-rl;
-								textd.style.text-orientation: upright;
-								cdeg.style.left="auto";
-								cdeg.style.top="0%";
-								cdeg.style.bottom="auto";
-								cdeg.style.right="auto";
-								bok.style.left="auto";
-								bok.style.top="auto";
-								bok.style.bottom="0%";
-								bok.style.right="auto";
-								bcan.style.left="auto";
-								bcan.style.top="auto";
-								bcan.style.bottom="0%";
-								bcan.style.right="auto";
+								dialog.style.flexDirection = "row"
+								textd.style.left = "auto";
+								textd.style.top = "0";
+								textd.style.bottom = "auto";
+								textd.style.right = "auto";
+								textd.style.writingMode = "vertical-rl";
+								textd.style.textOrientation = "upright";
+								cdeg.style.left = "auto";
+								cdeg.style.top = "0";
+								cdeg.style.bottom = "auto";
+								cdeg.style.right = "auto";
+								bok.style.left = "auto";
+								bok.style.top = "auto";
+								bok.style.bottom = "0";
+								bok.style.right = "auto";
+								bcan.style.left = "auto";
+								bcan.style.top = "auto";
+								bcan.style.bottom = "0";
+								bcan.style.right = "auto";
 								svg.setAttribute("width","378");
 								svg.setAttribute("height","350");
 								svg.setAttribute("viewBox","0 0 378 350");
@@ -310,32 +304,25 @@
 							break;
 						case "landscape-secondary":
 							try{
-								divBctrl.style.left="auto";
-								divBctrl.style.top="0%";
-								divBctrl.style.bottom="0%";
-								divBctrl.style.right="0%";
-								divSvg.style.left="0";
-								divSvg.style.top="0%";
-								divSvg.style.bottom="0%";
-								divSvg.style.right="auto";
-								textd.style.left="auto";
-								textd.style.top="0%";
-								textd.style.bottom="auto";
-								textd.style.right="auto";
-								textd.style.writing-mode: vertical-rl;
-								textd.style.text-orientation: upright;
-								cdeg.style.left="auto";
-								cdeg.style.top="0%";
-								cdeg.style.bottom="auto";
-								cdeg.style.right="auto";
-								bok.style.left="auto";
-								bok.style.top="auto";
-								bok.style.bottom="0%";
-								bok.style.right="auto";
-								bcan.style.left="auto";
-								bcan.style.top="auto";
-								bcan.style.bottom="0%";
-								bcan.style.right="auto";
+								dialog.style.flexDirection = "row"
+								textd.style.left = "auto";
+								textd.style.top = "0";
+								textd.style.bottom = "auto";
+								textd.style.right = "auto";
+								textd.style.writingMode = "vertical-rl";
+								textd.style.textOrientation = "upright";
+								cdeg.style.left = "auto";
+								cdeg.style.top = "0";
+								cdeg.style.bottom = "auto";
+								cdeg.style.right = "auto";
+								bok.style.left = "auto";
+								bok.style.top = "auto";
+								bok.style.bottom = "0";
+								bok.style.right = "auto";
+								bcan.style.left = "auto";
+								bcan.style.top = "auto";
+								bcan.style.bottom = "0";
+								bcan.style.right = "auto";
 								svg.setAttribute("width","378");
 								svg.setAttribute("height","350");
 								svg.setAttribute("viewBox","0 0 378 350");
@@ -351,32 +338,25 @@
 							break;
 						case "portrait-primary":
 							try{
-								divBctrl.style.left="0%";
-								divBctrl.style.top="0%";
-								divBctrl.style.bottom="auto";
-								divBctrl.style.right="0%";
-								divSvg.style.left="0%";
-								divSvg.style.top="auto";
-								divSvg.style.bottom="0%";
-								divSvg.style.right="0%";
-								textd.style.left="0%";
-								textd.style.top="auto";
-								textd.style.bottom="auto";
-								textd.style.right="auto";
-								textd.style.writing-mode: horizontal-tb;
-								textd.style.text-orientation: upright;
-								cdeg.style.left="0%";
-								cdeg.style.top="auto";
-								cdeg.style.bottom="auto";
-								cdeg.style.right="auto";
-								bok.style.left="auto";
-								bok.style.top="auto";
-								bok.style.bottom="auto";
-								bok.style.right="0%";
-								bcan.style.left="auto";
-								bcan.style.top="auto";
-								bcan.style.bottom="auto";
-								bcan.style.right="0%";
+								dialog.style.flexDirection = "column"
+								textd.style.left = "0";
+								textd.style.top = "auto";
+								textd.style.bottom = "auto";
+								textd.style.right = "auto";
+								textd.style.writingMode = "horizontal-tb";
+								textd.style.textOrientation = "upright";
+								cdeg.style.left = "0";
+								cdeg.style.top = "auto";
+								cdeg.style.bottom = "auto";
+								cdeg.style.right = "auto";
+								bok.style.left = "auto";
+								bok.style.top = "auto";
+								bok.style.bottom = "auto";
+								bok.style.right = "0";
+								bcan.style.left = "auto";
+								bcan.style.top = "auto";
+								bcan.style.bottom = "auto";
+								bcan.style.right = "0";
 								svg.setAttribute("width","350");
 								svg.setAttribute("height","378");
 								svg.setAttribute("viewBox","0 0 350 378");
@@ -392,40 +372,33 @@
 							break;
 						case "portrait-secondary":
 							try{
-								divBctrl.style.left="0%";
-								divBctrl.style.top="auto";
-								divBctrl.style.bottom="0%";
-								divBctrl.style.right="0%";
-								divSvg.style.left="0%";
-								divSvg.style.top="0%";
-								divSvg.style.bottom="auto";
-								divSvg.style.right="0%";
-								divBctrl.style.left="0%";
-								divBctrl.style.top="0%";
-								divBctrl.style.bottom="auto";
-								divBctrl.style.right="0%";
-								divSvg.style.left="0%";
-								divSvg.style.top="auto";
-								divSvg.style.bottom="0%";
-								divSvg.style.right="0%";
-								textd.style.left="0%";
-								textd.style.top="auto";
-								textd.style.bottom="auto";
-								textd.style.right="auto";
-								textd.style.writing-mode: horizontal-tb;
-								textd.style.text-orientation: upright;
-								cdeg.style.left="0%";
-								cdeg.style.top="auto";
-								cdeg.style.bottom="auto";
-								cdeg.style.right="auto";
-								bok.style.left="auto";
-								bok.style.top="auto";
-								bok.style.bottom="auto";
-								bok.style.right="0%";
-								bcan.style.left="auto";
-								bcan.style.top="auto";
-								bcan.style.bottom="auto";
-								bcan.style.right="0%";
+								dialog.style.flexDirection = "column"
+								divBctrl.style.left = "0";
+								divBctrl.style.top = "0";
+								divBctrl.style.bottom = "auto";
+								divBctrl.style.right = "0";
+								divSvg.style.left = "0";
+								divSvg.style.top = "auto";
+								divSvg.style.bottom = "0";
+								divSvg.style.right = "0";
+								textd.style.left = "0";
+								textd.style.top = "auto";
+								textd.style.bottom = "auto";
+								textd.style.right = "auto";
+								textd.style.writingMode = "horizontal-tb";
+								textd.style.textOrientation = "upright";
+								cdeg.style.left = "0";
+								cdeg.style.top = "auto";
+								cdeg.style.bottom = "auto";
+								cdeg.style.right = "auto";
+								bok.style.left = "auto";
+								bok.style.top = "auto";
+								bok.style.bottom = "auto";
+								bok.style.right = "0";
+								bcan.style.left = "auto";
+								bcan.style.top = "auto";
+								bcan.style.bottom = "auto";
+								bcan.style.right = "0";
 								svg.setAttribute("width","350");
 								svg.setAttribute("height","378");
 								svg.setAttribute("viewBox","0 0 350 378");
