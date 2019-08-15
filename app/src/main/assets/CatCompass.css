@@ -1,0 +1,319 @@
+/*
+   	Copyright 2019 Pere Nubiola
+    This file is part of CatCompass.
+
+    CatCompass is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CatCompass is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CatCompass.  If not, see <https://www.gnu.org/licenses/>.
+*/
+@import url('https://fonts.googleapis.com/css?family=Charmonman|Courgette|Pacifico&display=swap');
+.catNubiolaCompasDialog{
+    margin: auto;
+    border-radius: 50% 50% 50% 50%;
+    border-color: coral;
+    /*background-color: #D6B37A;*/
+    background-color: black;
+}
+.catNubiolaCompasDialog .CompassContainer{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center
+}
+.catNubiolaCompasDialog .barraCtrlCompass{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    order: 1;
+}
+.catNubiolaCompasDialog .divCompassSvg{
+    order: 2;
+}
+.catNubiolaCompasDialog .CompassText{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.catNubiolaCompasDialog .CompassButtons{
+    margin-top: 5px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.catNubiolaCompasDialog .Textdegrees{
+    font-size  : 18px;
+    color: coral;
+}
+.catNubiolaCompasDialog .CompassDegrees{
+    font-family: 'Pacifico', cursive;
+    font-size  : 24px;
+    text-align: left;
+    font-weight: bold;
+    color: coral;
+}
+.catNubiolaCompasDialog .roundedButton {
+    width: 60px;
+    background-color: #BCC2B2;
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    color: coral;
+}
+.catNubiolaCompasDialog .CompassOk{
+    border-color: green;
+}
+.catNubiolaCompasDialog .CompassCancel{
+    border-color: red;
+}
+.catNubiolaCompasDialog div svg{
+    display: block;
+    margin: auto;
+}
+.catNubiolaCompasDialog .recMarcCompas {
+    fill: #D6B37A;
+    stroke: none;
+}
+.catNubiolaCompasDialog .AgullaCompas{
+    stroke-width:0.1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+}
+.catNubiolaCompasDialog .baseCompass{
+    stroke: coral;
+    fill: none;
+    /*fill: #e8e0ca;*/
+    stroke-width: 0 ;
+}
+.catNubiolaCompasDialog .guiesRosaDelsVentes{
+    stroke: coral;
+    stroke-width: 1;
+}
+.catNubiolaCompasDialog .TextCompass {
+    font-family: 'Pacifico', cursive;
+    font-size  : 12px;
+    fill: red;
+    stroke: none;
+    text-anchor: middle;
+}
+.catNubiolaCompasDialog .rosadelsvents{
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+}
+.catNubiolaCompasDialog .dSegon{
+    stroke: coral;
+    fill: coral;
+}
+.catNubiolaCompasDialog .dPrincipal{
+    stroke: yellow;
+    fill: yellow;
+}
+.catNubiolaCompasDialog .rosadelsventstext{
+    font-family: 'Courgette', cursive;
+    fill: black;
+    stroke: coral;
+    stroke-width: 1px;
+    text-anchor: middle;
+}
+.catNubiolaCompasDialog .principal{
+    font-size  : 24px;
+}
+.catNubiolaCompasDialog .segon{
+    font-size  : 12px;
+}
+.catNubiolaCompasDialog .escut{
+    fill: yellow;
+    stroke: none;
+}
+.catNubiolaNivellDialog{
+    margin: auto;
+    border-radius: 10% 10% 10% 10%;
+    border-color: coral;
+    background-color: black;
+}
+.catNubiolaNivellDialog .contenidorNivell{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center
+}
+.catNubiolaNivellDialog .barraCtrlNivell{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    order: 1;
+}
+.catNubiolaNivellDialog .divNivellSvg{
+    order: 2;
+}
+.catNubiolaNivellDialog .NivellTextX{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.catNubiolaNivellDialog .NivellTextY{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.catNubiolaNivellDialog .NivellButtons{
+    margin-top: 5px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.catNubiolaNivellDialog .TextXdegrees{
+    font-size  : 18px;
+    color: coral;
+}
+.catNubiolaNivellDialog .TextYdegrees{
+    font-size  : 18px;
+    color: coral;
+}
+.catNubiolaNivellDialog .NivellXDegrees{
+    font-family: 'Pacifico', cursive;
+    font-size  : 24px;
+    text-align: left;
+    font-weight: bold;
+    color: coral;
+}
+.catNubiolaNivellDialog .NivellYDegrees{
+    font-family: 'Pacifico', cursive;
+    font-size  : 24px;
+    text-align: left;
+    font-weight: bold;
+    color: coral;
+}
+.catNubiolaNivellDialog .roundedButton {
+    width: 60px;
+    background-color: #BCC2B2;
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+    border-width: 2px;
+    color: coral;
+    margin-bottom: 10px;
+}
+.catNubiolaNivellDialog .NivellOk{
+    border-color: green;
+}
+.catNubiolaNivellDialog .NivellCancel{
+    border-color: red;
+}
+.catNubiolaNivellDialog .NivellGuia{
+    stroke: coral;
+    stroke-width: 2px;
+    fill: none;
+}
+.catNubiolaNivellDialog .NivellLimit{
+    stroke: coral;
+    stroke-width: 2px;
+    fill: none;
+}
+
+@media (orientation: landscape) {
+    .bodyEspace{
+        margin-top: 100px;
+    }
+}
+@media (orientation: portrait) {
+    .bodyEspace{
+        margin-top: 200px;
+    }
+}
+.bodyEspace{
+    background-color: LightCoral;
+    margin-bottom: auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.espaceSelection{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+.buttonImage{
+    background-color: black;
+}
+.ImageButton{
+    width: 60px;
+    height: 60px;
+}
+.espaceResult{
+    margin-left: 10px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.textResult{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.BruixolaNivelResult{
+    margin-left: 10px;
+    color: blue;
+}
+.abaouts{
+    margin-top:50px;
+    margin.left: 10px;
+    align-self: stretch;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background-color: black;
+}
+.about{
+    margin-left: auto
+    margin.bottom: 10px;
+}
+.ImageGPL{
+    background-color: white;
+    margin-top: 10px;
+    margin-left: auto;
+}
+.TextAbout{
+    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    text-justify: auto;
+}
+.Copyright{
+    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.about{
+    margin-left: 80%;
+    margin-right:5%;
+}
