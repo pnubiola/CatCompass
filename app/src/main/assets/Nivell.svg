@@ -1,0 +1,82 @@
+<svg x="0" y="0" width="300" height="300" viewBox="0 0 300 300"
+     xmlns="http://www.w3.org/2000/svg">
+	<!--
+
+	Copyright 2019 Pere Nubiola
+
+	This file is part of CatCompass.
+
+	CatCompass is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	CatCompass is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with CatCompass.  If not, see <https://www.gnu.org/licenses/>.
+	-->
+	<style type="text/css">
+		.NivellGuia{
+			stroke: coral;
+			stroke-width: 2px;
+			fill: none;
+		}
+		.NivellLimit{
+			stroke: coral;
+			stroke-width: 2px;
+			fill: none;
+		}
+	</style>
+	<defs>
+		<clipPath id="regioescut2">
+			<circle cx="30" cy="180" r="30"/>
+		</clipPath>
+		<clipPath id="regioescut3">
+			<circle cx="180" cy="30" r="30"/>
+		</clipPath>
+		<clipPath id="regioescut4">
+			<circle cx="180" cy="180" r="30"/>
+		</clipPath>
+	</defs>
+
+	<rect class="BetaRectangle NivellGuia" x="0" y="60" rx="30" ry="30" width="60" height="240"/>
+	<rect class="NivellLimit" x="0" y="145" width="60" height="70"/>
+	<g class="Beta" clip-path="url(#regioescut2)">
+		<circle class="BetaCircle" cx="30" cy="180" r="30" fill="yellow"/>
+		<rect x="0" y="156" width="60" height="7.5" fill="red"/>
+		<rect x="0" y="169.5" width="60" height="7.5" fill="red"/>
+		<rect x="0" y="183" width="60" height="7.5" fill="red"/>
+		<rect x="0" y="196.5" width="60" height="7.5" fill="red"/>
+		<polygon points="0,150 30,180 0,210" fill="blue"/>
+		<polygon points="1,180 5.84,178.43 5.84,173.34 8.83,177.46 13.66,175.89 10.2,180 13.66,184.11 8.83,182.54 5.84,186.66 5.84,181.57" fill="white"/>
+	</g>
+
+	<rect class="GammaRectangle NivellGuia" x="60" y="0" rx="30" ry="30" width="240" height="60"/>
+	<rect class="NivellLimit" x="145" y="0" width="70" height="60" />
+	<g class="Gamma" clip-path="url(#regioescut3)">
+		<circle class="GammaCircle" cx="180" cy="30" r="30" fill="yellow"/>
+		<rect x="150" y="6" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="19.5" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="33" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="46.5" width="60" height="7.5" fill="red"/>
+		<polygon points="150,0 180,30 150,60" fill="blue"/>
+		<polygon points="151,30 155.84,28.43 155.84,23.34 158.83,27.46 163.66,25.89 160.2,30 163.66,34.11 158.83,32.54 155.84,36.66 155.84,31.57" fill="white"/>
+	</g>
+
+
+	<circle class="BetGamPCircle NivellGuia" cx="180" cy="180" r="120" stroke="coral" />
+	<circle class="NivellLimit" cx="180" cy="180" r="35"/>
+	<g class="BetaGamma" clip-path="url(#regioescut4)">
+		<circle class="BetGamCircle" cx="180" cy="180" r="30" fill="yellow"/>
+		<rect x="150" y="156" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="169.5" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="183" width="60" height="7.5" fill="red"/>
+		<rect x="150" y="196.5" width="60" height="7.5" fill="red"/>
+		<polygon points="150,150 180,180 150,210" fill="blue"/>
+		<polygon points="151,180 155.84,178.43 155.84,173.34 158.83,177.46 163.66,175.89 160.2,180 163.66,184.11 158.83,182.54 155.84,186.66 155.84,181.57" fill="white"/>
+	</g>
+</svg>

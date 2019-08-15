@@ -1,0 +1,147 @@
+<svg x="0" y="0" width="350" height="350" viewBox="0 0 350 350"
+     xmlns="http://www.w3.org/2000/svg">
+	<!--
+
+	Copyright 2019 Pere Nubiola
+
+	This file is part of CatCompass.
+
+	CatCompass is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	CatCompass is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with CatCompass.  If not, see <https://www.gnu.org/licenses/>.
+	-->
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Charmonman|Courgette|Pacifico&amp;display=swap');
+		.baseCompass{
+		stroke: coral;
+		fill: none;
+		/*fill: #e8e0ca;*/
+		stroke-width: 0 ;
+		}
+		.guiesRosaDelsVentes{
+			stroke: coral;
+			stroke-width: 1;
+		}
+		.TextCompass {
+			font-family: 'Pacifico', cursive;
+			font-size  : 12px;
+			fill: red;
+			stroke: none;
+			text-anchor: middle;
+		}
+		.rosadelsvents{
+			stroke-width: 2px;
+			stroke-linejoin: miter;
+			stroke-linecap: butt;
+			stroke-miterlimit: 4;
+			stroke-dasharray: none;
+		}
+		.dSegon{
+			stroke: coral;
+			fill: coral;
+		}
+		.dPrincipal{
+			stroke: yellow;
+			fill: yellow;
+		}
+		.rosadelsventstext{
+			font-family: 'Courgette', cursive;
+			fill: black;
+			stroke: coral;
+			stroke-width: 1px;
+			text-anchor: middle;
+		}
+		.principal{
+			font-size  : 24px;
+		}
+		.segon{
+			font-size  : 12px;
+		}
+		.escut{
+			fill: yellow;
+			stroke: none;
+		}
+	</style>
+	<defs>
+		<clipPath id="regioescut">
+			<circle cx="175" cy="175" r="60"/>
+		</clipPath>
+	</defs>
+	<circle class="baseCompass" cx="175" cy="175" r="175"/>
+	<g transform="rotate(22.5 175 175)">
+		<polygon class="rosadelsvents dSegon" points="175,60 205,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,145 290,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="290,175 205,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,205 175,290 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="175,290 145,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,205 60,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="60,175 145,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,145 175,60 175,175"/>
+	</g>
+	<g transform="rotate(67.5 175 175)">
+		<polygon class="rosadelsvents dSegon" points="175,60 205,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,145 290,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="290,175 205,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,205 175,290 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="175,290 145,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,205 60,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="60,175 145,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,145 175,60 175,175"/>
+	</g>
+	<g transform="rotate(45 175 175)">
+		<polygon class="rosadelsvents dSegon" points="175,30 205,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,145 320,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="320,175 205,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,205 175,320 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="175,320 145,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,205 30,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="30,175 145,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,145 175,30 175,175"/>
+	</g>
+	<g>
+		<polygon class="rosadelsvents dSegon" points="175,30 205,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,145 320,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="320,175 205,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="205,205 175,320 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="175,320 145,205 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,205 30,175 175,175"/>
+		<polygon class="rosadelsvents dSegon" points="30,175 145,145 175,175"/>
+		<polygon class="rosadelsvents dPrincipal" points="145,145 175,30 175,175"/>
+	</g>
+	<text x="175" y="62" class="rosadelsventstext">N</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(22.5 175 175)">NNE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(45 175 175)">NE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(67.5 175 175)">NEE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(90 175 175)">E</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(112.5 175 175)">SEE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(135 175 175)">SE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(157.5 175 175)">SSE</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(180 175 175)">S</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(202.5 175 175)">SSO</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(225 175 175)">SO</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(247.5 175 175)">SOO</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(270 175 175)">O</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(292.5 175 175)">NOO</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(315 175 175)">NO</text>
+	<text x="175" y="62" class="rosadelsventstext" transform="rotate(337.5 175 175)">NNO</text>
+	<circle cx="175" cy="175" r="60" class="escut"/>
+	<g clip-path="url(#regioescut)">
+		<rect x="127.5" y="115" width="14" height="120" stroke="none" fill="red"/>
+		<rect x="154.5" y="115" width="14" height="120" stroke="none" fill="red"/>
+		<rect x="181.5" y="115" width="14" height="120" stroke="none" fill="red"/>
+		<rect x="208.5" y="115" width="14" height="120" stroke="none" fill="red"/>
+		<polygon points="115,115 175,175 235,115" fill="blue" stroke="none"/>
+		<polygon
+				points="175,115 180.61,132.28 198.78,132.28 184.08,142.95 189.69,160.23 175,149.55 160.31,160.23 165.92,142.95 151.22,132.28 169.39,132.28"
+				fill="white" stroke="none"/>
+	</g>
+</svg>
